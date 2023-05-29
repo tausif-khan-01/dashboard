@@ -22,8 +22,8 @@
 
   /* ====== Transition ====== */
   --tran-05: all 0.3s ease;
-  --tran-03: all 0.3s ease;
-  --tran-03: all 0.2s ease;
+  /* --tran-03: all 0.3s ease; */
+  /* --tran-03: all 0.2s ease; */
 }
 
 body {
@@ -264,68 +264,115 @@ nav.close ~ .dashboard .top {
   color: var(--text-color);
   margin-left: 10px;
 }
-.dash-content .boxes {
+.dash-content form {
+  max-width: 90%;
+  margin-inline: auto;
+  /* margin-right: 10px; */
+}
+.dash-content .form .personal-details {
+  font-size: 1rem;
+  font-weight: 500;
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.dash-content .form .personal-details div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-content .form .personal-details div input,
+.Business-Details > div > input {
+  height: 40px;
+  font-size: 1.125rem;
+
+  border: 2px solid var(--box1-color);
+  border-radius: 5px;
+}
+input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.Business-Details > div {
+  margin-bottom: 20px;
+}
+
+.Business-Details {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  display: flex;
   flex-wrap: wrap;
 }
-.dash-content .boxes .box {
+.Business-Details label {
+  display: block;
+}
+.Business-Details textarea {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 2px solid var(--box1-color);
+  font-size: 1rem;
+}
+.Business-Details textarea:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  height: 1rem !important;
+  width: auto;
+  /* font-size: .125rem; */
+}
+.checkboxes div {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-radius: 12px;
-  width: calc(100% / 3 - 15px);
-  padding: 15px 20px;
-  background-color: var(--box1-color);
-  transition: var(--tran-05);
+  gap: 1.25rem;
 }
-.boxes .box i {
-  font-size: 35px;
-  color: var(--text-color);
+
+label[for="checkbox"] {
+  font-size: 1rem;
+  display: inline;
+  font-weight: normal;
+  margin-left: 10px !important;
 }
-.boxes .box .text {
-  white-space: nowrap;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--text-color);
+
+.checkboxes1,
+.checkboxes2 {
+  margin-block: 10px;
 }
-.boxes .box .number {
-  font-size: 40px;
-  font-weight: 500;
-  color: var(--text-color);
-}
-.boxes .box.box2 {
-  background-color: var(--box2-color);
-}
-.boxes .box.box3 {
-  background-color: var(--box3-color);
-}
-.dash-content .activity .activity-data {
+.btn {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+
+  justify-content: end;
 }
-.activity .activity-data {
-  display: flex;
+
+input[type = "date"]{
+  max-width: 200px;
 }
-.activity-data .data {
-  display: flex;
-  flex-direction: column;
-  margin: 0 15px;
-}
-.activity-data .data-title {
-  font-size: 20px;
+
+
+button[type="submit"] {
+  all: unset;
+  border: 2px solid #004aad;
+  color: white;
+  background-color: #004aad;
+  margin: 20px 10px;
+  padding: 10px 25px;
+  /* width: px; */
+  border-radius: 30px;
+  font-size: 95%;
   font-weight: 500;
-  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
 }
-.activity-data .data .data-list {
-  font-size: 18px;
-  font-weight: 400;
-  margin-top: 20px;
-  white-space: nowrap;
-  color: var(--text-color);
+button[type="submit"]:hover {
+  transform: scale(1.1);
+
+  background-color: #004bad73;
 }
 
 @media (max-width: 1000px) {
@@ -366,9 +413,6 @@ nav.close ~ .dashboard .top {
   nav.close ~ .dashboard .top {
     left: 250px;
     width: calc(100% - 250px);
-  }
-  .activity .activity-data {
-    overflow-x: scroll;
   }
 }
 
@@ -429,5 +473,25 @@ nav.close ~ .dashboard .top {
   #main-brand,
   .logo-name:nth-child(1) {
     display: none !important;
+  }
+  .dash-content .form .personal-details div input {
+    box-sizing: border-box;
+    width: 90%;
+
+    /* min-width: 200px;
+    max-width: 250px; */
+    height: 40px;
+    font-size: 1.125rem;
+
+    border: 2px solid var(--box1-color);
+    border-radius: 5px;
+  }
+  .Business-Details > div > input {
+    width: 90% !important;
+  }
+  .Business-Details {
+    margin-top: 40px;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
